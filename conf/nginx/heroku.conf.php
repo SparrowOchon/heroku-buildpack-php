@@ -29,6 +29,9 @@ http {
 
 	server {
 		# define an easy to reference name that can be used in try_files
+		location / {
+       			try_files $uri $uri/ /index.html;
+    		}
 		location @heroku-fcgi {
 			include fastcgi_params;
 
